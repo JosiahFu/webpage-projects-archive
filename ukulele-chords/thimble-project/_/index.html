@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ukulele chords</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+    <script src="draw.js"></script>
+  </head>
+  <body>
+    <h1>Ukulele Chords</h1>
+    <div class="chords">
+      <img src="chord%20grid.svg" width="100px" height="200px" style="padding:20px">
+      <div id="dot1"></div>
+      <div id="dot2"></div>
+      <div id="dot3"></div>
+      <div id="dot4"></div>
+      <div id="bar"></div>
+    </div>
+    <div class="buttons">
+      <table>
+        <tr>
+          <td class="empty"></td>
+          <th>C</th>
+          <th>D</th>
+          <th>E</th>
+          <th>F</th>
+          <th>G</th>
+          <th>A</th>
+          <th>B</th>
+        </tr>
+        <tr>
+          <th>Major</th>
+          <td><button onclick="chord(0, 0, 0, 0, 4, 3, 0, 0); bar(0, 0, 0, 0);">C</button></td>
+          <td><button onclick="chord(1, 2, 2, 2, 3, 2, 0, 0); bar(0, 0, 0, 0);">D</button></td>
+          <td><button onclick="chord(4, 2, 3, 4, 2, 4, 1, 4); bar(0, 0, 0, 0);">E</button></td>
+          <td><button onclick="chord(3, 1, 1, 2, 0, 0, 0, 0); bar(0, 0, 0, 0);">F</button></td>
+          <td><button onclick="chord(2, 2, 4, 2, 3, 3, 0, 0); bar(0, 0, 0, 0);">G</button></td>
+          <td><button onclick="chord(2, 1, 1, 2, 0, 0, 0, 0); bar(0, 0, 0, 0);">A</button></td>
+          <td><button onclick="chord(0, 0, 2, 3, 1, 4, 0, 0); bar(2, 3, 4, '1');">B</button></td>
+        </tr>
+        <tr>
+          <th>Minor</th>
+          <td><button onclick="chord(2, 3, 3, 3, 4, 3, 0, 0); bar(0, 0, 0, 0);">Cm</button></td>
+          <td><button onclick="chord(3, 1, 1, 2, 2, 2, 0, 0); bar(0, 0, 0, 0);">Dm</button></td>
+          <td><button onclick="chord(4, 2, 3, 3, 2, 4, 0, 0); bar(0, 0, 0, 0);">Em</button></td>
+          <td><button onclick="chord(1, 1, 3, 1, 4, 3, 0, 0); bar(0, 0, 0, 0);">Fm</button></td>
+          <td><button onclick="chord(4, 1, 2, 2, 3, 3, 0, 0); bar(0, 0, 0, 0);">Gm</button></td>
+          <td><button onclick="chord(0, 0, 1, 2, 0, 0, 0, 0); bar(0, 0, 0, 0);">Am</button></td>
+          <td><button onclick="chord(0, 0, 0, 0, 1, 4, 0, 1); bar(2, 2, 4,'1');">Bm</button></td>
+        </tr>
+        <tr>
+          <th>Seventh</th>
+          <td><button onclick="chord(4, 1, 0, 0, 0, 0, 0, 0); bar(0, 0, 0, 0);">C7</button></td>
+          <td><button onclick="chord(0, 0, 1, 2, 3, 2, 0, 0); bar(0, 0, 0, 0);">D7</button></td>
+          <td><button onclick="chord(1, 1, 2, 2, 4, 2, 0, 0); bar(0, 0, 0, 0);">E7</button></td>
+          <td><button onclick="chord(3, 1, 1, 2, 2, 3, 4, 3); bar(0, 0, 0, 0);">F7</button></td>
+          <td><button onclick="chord(3, 1, 2, 2, 4, 2, 0, 0); bar(0, 0, 0, 0);">G7</button></td>
+          <td><button onclick="chord(2, 1, 0, 0, 0, 0, 0, 0); bar(0, 0, 0, 0);">A7</button></td>
+          <td><button onclick="chord(3, 2, 2, 3, 1, 4, 0, 0); bar(0, 0, 0, 0);">B7</button></td>
+        </tr>
+        <tr>
+          <th>Minor 7th</th>
+          <td><button onclick="chord(0, 0, 0, 0, 0, 0, 0, 0,); bar(2, 1, 4, '1');">Cm7</button></td>
+          <td><button onclick="chord(3, 1, 1, 2, 2, 2, 4, 3); ">Dm7</button></td>
+          <td><button onclick="chord(0, 0, 2, 2, 4, 2, 0, 0); bar(0, 0, 0, 0);">Em7</button></td>
+          <td><button onclick="chord(0, 0, 1, 2, 3, 2, 0, 0); bar(1, 1, 4, '1');">Fm7</button></td>
+          <td><button onclick="chord(0, 0, 2, 2, 0, 0, 0, 0); bar(1, 3, 4, '1');">Gm7</button></td>
+          <td><button onclick="chord(0, 0, 0, 0, 0, 0, 0, 0); bar(0, 0, 0, 0);">Am7</button></td>
+          <td><button onclick="chord(0, 0, 0, 0, 0, 0, 0, 0); bar(2, 1, 4, '1');">Bm7</button></td>
+        </tr>
+        <tr>
+          <th>Major 7th</th>
+          <td><button onclick="chord(0, 0, 4, 2, 0, 0, 0, 0); bar(0, 0, 0, 0);">Cmaj7</button></td>
+          <td><button onclick="chord(0, 0, 0, 0, 4, 4, 0, 0); bar(2, 1, 4, '1');">Dmaj7</button></td>
+          <td><button onclick="chord(1, 1, 2, 3, 4, 2, 0, 0); bar(0, 0, 0, 0);">Emaj7</button></td>
+          <td><button onclick="chord(3, 1, 1, 2, 4, 3, 2, 4); bar(0, 0, 0, 0);">Fmaj7</button></td>
+          <td><button onclick="chord(1, 2, 2, 2, 0, 0, 0, 0); bar(0, 0, 0, 0);">Gmaj7</button></td>
+          <td><button onclick="chord(0, 0, 1, 1, 2, 1, 0, 0); bar(0, 0, 0, 0);">Amaj7</button></td>
+          <td><button onclick="chord(4, 1, 3, 2, 2, 3, 1, 4); bar(0, 0, 0, 0);">Bmaj7</button></td>
+        </tr>
+        <tr>
+          <th>Diminished</th>
+        </tr>
+        <tr>
+          <th>Suspended 2nd</th>
+          <td><button onclick="chord(2, 2, 3, 3, 4, 3, 0, 0); bar(0, 0, 0, 0);">Csus2</button></td>
+          <td><button onclick="chord(0, 0, 1, 2, 2, 2, 0, 0); bar(0, 0, 0, 0);">Dsus2</button></td>
+          <td><button onclick="chord(0, 0, 0, 0, 1, 4, 2, 4); bar(2, 3, 4, '1')">Esus2</button></td>
+          <td><button onclick="chord(2, 1, 0, 0, 4, 3, 0, 0); bar(0, 0, 0, 0);">Fsus2</button></td>
+          <td><button onclick="chord(0, 0, 2, 2, 3, 3, 0, 0); bar(0, 0, 0, 0);">Gsus2</button></td>
+          <td><button onclick="chord(0, 0, 0, 0, 2, 4, 3, 4.75); bar(2, 1, 4, '1');">Asus2</button></td>
+          <td><button onclick="chord(2, 1, 3, 2, 4, 2, 1, 3); bar(0, 0, 0, 0);">Bsus2</button></td>
+        </tr>
+        <tr>
+          <th>Suspended 4th</th>
+        </tr>
+        <tr>
+          <th>Sixth</th>
+          <td><button onclick="chord(0, 0, 0, 0, 0, 0, 0, 0); bar(0, 0, 0, 0)">C6</button></td>
+        </tr>
+      </table>
+    </div>
+    <!--<div class="notice"><h2>Notice</h2><p>This is a work in progress. New chords will be added from time to time.</p></div>-->
+  </body>
+</html>

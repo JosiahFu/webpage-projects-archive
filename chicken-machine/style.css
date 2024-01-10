@@ -1,0 +1,369 @@
+.container {
+	height: 700px;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -350px;
+	overflow: hidden;
+}
+
+.machine {
+	float: left;
+	height: 700px;
+	width: 450px;
+}
+
+.machine-inner {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+.bowl {
+	animation: bowl 4.5s infinite; /*100 px/s*/
+	z-index: -2;
+}
+
+@keyframes bowl {
+	0% {}
+	50% {transform: translate(450px,0);}
+	100% {transform: translate(450px,0);}
+}
+
+.belt {
+	height: 40px;
+	width: 440px;
+	border: 5px solid;
+	border-radius: 25px;
+	position: absolute;
+	top: 600px;
+	left: 0;
+	z-index: -2;
+}
+
+.wheel {
+	height: 10px;
+	width: 10px;
+	border: 15px solid;
+	border-radius: 50%;
+	margin-right: 60px;
+	animation: wheel 4.5s infinite;
+	float: left;
+}
+
+.wheel:nth-child(5) {
+	margin-right: 0;
+}
+
+.wheel:after {
+	content: "";
+	height: 25px;
+	width: 25px;
+	border-top: 2px solid;
+	border-left: 2px solid transparent;
+	border-bottom: 2px solid;
+	border-right: 2px solid transparent;
+	border-radius: 50%;
+	position: absolute;
+	top: -9.5px;
+	left: -9.5px;
+	transform: rotate(-45deg);
+}
+
+@keyframes wheel {
+	0% {}
+	50% {transform: rotate(1080deg)}/*3240/pi*/
+	100% {transform: rotate(1080deg)}
+}
+
+.space {
+	/*height: 500px;
+	width: 450px;*/
+}
+
+.entrance {
+	/*height: 500px;
+	width: 200px;
+	margin-right: 250px;
+	background-color: gray;*/
+}
+
+.entrance .bar-1 {
+	height: 500px;
+	width: 200px;
+	position: absolute;
+	top: 200px;
+	left: 0;
+}
+
+.exit {
+	/*height: 500px;
+	width: 200px;
+	margin-left: 250px;
+	background-color: gray;*/
+}
+
+.exit .bar-1 {
+	height: 500px;
+	width: 200px;
+	position: absolute;
+	top: 200px;
+	left: 250px;
+}
+
+/*.exit .belt {
+    left: -250px;
+}
+
+.exit .bowl {
+    left: -175px;
+}*/
+
+.blank {
+	/*height: 500px;*/
+	width: 0;
+}
+
+.blank .bowl {
+	/*top: 200px;*/
+	left: -375px;
+}
+
+.dropper {
+	/*height: 500px;
+	width: 450px;*/
+}
+
+.dropper .bar-1 {
+	height: 200px;
+	width: 400px;
+	position: absolute;
+	left: 25px;
+	top: 0;
+}
+
+.dropper .bar-2 {
+	height: 50px;
+	width: 100px;
+	position: absolute;
+	left: 175px;
+	top: 200px;
+}
+
+.dropper .bar-3 {
+	position: absolute;
+	animation: drop 4.5s infinite;
+	z-index: -3;
+}
+
+@keyframes drop {
+	0% {transform: none;}
+	50% {transform: none;}
+	85% {transform: translate(0, 300px) rotate(180deg);}
+	100% {transform: translate(0, 300px) rotate(180deg);}
+}
+
+.mixer .bar-1 {
+	height: 200px;
+	width: 400px;
+	position: absolute;
+	left: 25px;
+	top: 0;
+}
+
+.mixer .bar-2 {
+	height: 20px;
+	width: 150px;
+	position: absolute;
+	left: 150px;
+	top: 200px;
+}
+
+.mixer .bar-3 {
+	height: 250px;
+	width: 20px;
+	position: absolute;
+	left: 215px;
+	top: 0;
+	animation: mix 4.5s infinite;
+	z-index: -3;
+}
+
+.mixer .bar-4 {
+	height: 60px;
+	width: 50px;
+	position: absolute;
+	left: 200px;
+	top: 250px;
+	animation: mix 4.5s infinite;
+	z-index: -3;
+}
+
+@keyframes mix {
+	0% {}
+	50% {transform: none;}
+	65% {transform: translate(0, 200px);}
+	70% {transform: translate(50px, 200px);}
+	75% {transform: translate(-50px, 200px);}
+	80% {transform: translate(0px, 200px);}
+	100% {transform: none;}
+}
+
+.oven .bar-1 {
+	width: 450px;
+	height: 425px;
+	position: absolute;
+	left: 0;
+	top: 250px;
+	Z-index: -2;
+}
+
+.oven .bar-2 {
+	width: 400px;
+	height: 200px;
+	position: absolute;
+	left: 0;
+	top: 250px;
+	border-width: 100px 25px 125px 25px;
+	border-style: solid;
+	animation: cook 4.5s infinite;
+}
+
+.remover .bar-1 {
+	height: 200px;
+	width: 400px;
+	position: absolute;
+	left: 25px;
+	top: 0;
+}
+
+.remover .bar-2 {
+	height: 20px;
+	width: 350px;
+	position: absolute;
+	left: 50px;
+	top: 200px;
+}
+
+.remover .bar-3 {
+	height: 200px;
+	width: 100px;
+	position: absolute;
+	left: 175px;
+	top: 20px;
+	animation: remove_1 4.5s infinite;
+	z-index: -3;
+}
+
+@keyframes remove_1 {
+	0% {transform: none;}
+	50% {transform: none;}
+	70% {transform: translate(0,200px);}
+	100% {transform: none;}
+}
+
+.remover .bar-4 {
+	z-index: -1;
+	animation: remove_2 4.5s infinite;
+}
+
+@keyframes remove_2 {
+	0% {}
+	50% {transform: translate(450px,0);}
+	70% {transform: translate(450px,0);}
+	100% {transform: translate(450px,-380px);}
+}
+
+.scanner .bar-1 {
+	width: 450px;
+	height: 350px;
+	position: absolute;
+	left: 0;
+	top: 325px;
+	Z-index: -2;
+}
+
+.scanner .bar-2 {
+	width: 400px;
+	height: 250px;
+	position: absolute;
+	left: 0;
+	top: 325px;
+	border-width: 25px 25px 75px 25px;
+	border-style: solid;
+}
+
+.scanner .bar-3 {
+	width: 400px;
+	height: 0;
+	position: absolute;
+	left: 25px;
+	top: 350px;
+	border-bottom: 5px solid;
+	animation: scan 4.5s infinite linear;
+}
+
+@keyframes scan {
+	0% {height: 0; opacity: 1;}
+	50% {height: 0; opacity: 1;}
+	80% {height: 245px; opacity: 1;}
+	90% {opacity: 1;}
+	100% {height: 245px; opacity: 0;}
+}
+
+.xray .bar-1 {
+	width: 400px;
+	height: 250px;
+	position: absolute;
+	left: 0;
+	top: 325px;
+	border-width: 25px 25px 75px 25px;
+	border-style: solid;
+}
+
+.xray .bar-2 {
+	width: 400px;
+	height: 0;
+	position: absolute;
+	left: 25px;
+	top: 350px;
+	border-top: 5px solid;
+	animation: xray_1 4.5s infinite linear;
+}
+
+@keyframes xray_1 {
+	0% {height: 245px; top: 350px;}
+	50% {height: 245px; top: 350px;}
+	80% {height: 0; top: 600px;}
+	100% {height: 0; top: 600px;}
+}
+
+.xray .bar-3 {
+	height: 40px;
+	width: 50px;
+	position: absolute;
+	left: 100px;
+	top: 285px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	z-index: -1;
+}
+
+.xray .bar-3.lit {
+	animation: xray_2_green 4.5s infinite;
+}
+
+.xray .bar-4 {
+	height: 40px;
+	width: 50px;
+	position: absolute;
+	left: 200px;
+	top: 285px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	z-index: -1;
+}
+
+.xray .bar-4.lit {
+	animation: xray_2_red 4.5s infinite;
+}

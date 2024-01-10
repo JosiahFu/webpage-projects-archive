@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Assembly Line</title>
+		<style>
+.container {
+	height: 700px;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -350px;
+	overflow: hidden;
+}
+
+.machine {
+	float: left;
+	height: 700px;
+	width: 450px;
+}
+
+.machine-inner {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+.bowl {
+	animation: bowl 4.5s infinite; /*100 px/s*/
+	z-index: -2;
+}
+
+@keyframes bowl {
+	0% {}
+	50% {transform: translate(450px,0);}
+	100% {transform: translate(450px,0);}
+}
+
+.belt {
+	height: 40px;
+	width: 440px;
+	border: 5px solid;
+	border-radius: 25px;
+	position: absolute;
+	top: 600px;
+	left: 0;
+	z-index: -2;
+}
+
+.wheel {
+	height: 10px;
+	width: 10px;
+	border: 15px solid;
+	border-radius: 50%;
+	margin-right: 60px;
+	animation: wheel 4.5s infinite;
+	float: left;
+}
+
+.wheel:nth-child(5) {
+	margin-right: 0;
+}
+
+.wheel:after {
+	content: "";
+	height: 25px;
+	width: 25px;
+	border-top: 2px solid;
+	border-left: 2px solid transparent;
+	border-bottom: 2px solid;
+	border-right: 2px solid transparent;
+	border-radius: 50%;
+	position: absolute;
+	top: -9.5px;
+	left: -9.5px;
+	transform: rotate(-45deg);
+}
+
+@keyframes wheel {
+	0% {}
+	50% {transform: rotate(1080deg)}/*3240/pi*/
+	100% {transform: rotate(1080deg)}
+}
+
+.space {
+	/*height: 500px;
+	width: 450px;*/
+}
+
+.entrance {
+	/*height: 500px;
+	width: 200px;
+	margin-right: 250px;
+	background-color: gray;*/
+}
+
+.entrance .bar-1 {
+	height: 500px;
+	width: 200px;
+	position: absolute;
+	top: 200px;
+	left: 0;
+}
+
+.exit {
+	/*height: 500px;
+	width: 200px;
+	margin-left: 250px;
+	background-color: gray;*/
+}
+
+.exit .bar-1 {
+	height: 500px;
+	width: 200px;
+	position: absolute;
+	top: 200px;
+	left: 250px;
+}
+
+/*.exit .belt {
+    left: -250px;
+}
+
+.exit .bowl {
+    left: -175px;
+}*/
+
+.blank {
+	/*height: 500px;*/
+	width: 0;
+}
+
+.blank .bowl {
+	/*top: 200px;*/
+	left: -375px;
+}
+
+.dropper {
+	/*height: 500px;
+	width: 450px;*/
+}
+
+.dropper .bar-1 {
+	height: 200px;
+	width: 400px;
+	position: absolute;
+	left: 25px;
+	top: 0;
+}
+
+.dropper .bar-2 {
+	height: 50px;
+	width: 100px;
+	position: absolute;
+	left: 175px;
+	top: 200px;
+}
+
+.dropper .bar-3 {
+	position: absolute;
+	animation: drop 4.5s infinite;
+	z-index: -3;
+}
+
+@keyframes drop {
+	0% {transform: none;}
+	50% {transform: none;}
+	85% {transform: translate(0, 300px) rotate(180deg);}
+	100% {transform: translate(0, 300px) rotate(180deg);}
+}
+
+.mixer .bar-1 {
+	height: 200px;
+	width: 400px;
+	position: absolute;
+	left: 25px;
+	top: 0;
+}
+
+.mixer .bar-2 {
+	height: 20px;
+	width: 150px;
+	position: absolute;
+	left: 150px;
+	top: 200px;
+}
+
+.mixer .bar-3 {
+	height: 250px;
+	width: 20px;
+	position: absolute;
+	left: 215px;
+	top: 0;
+	animation: mix 4.5s infinite;
+	z-index: -3;
+}
+
+.mixer .bar-4 {
+	height: 60px;
+	width: 50px;
+	position: absolute;
+	left: 200px;
+	top: 250px;
+	animation: mix 4.5s infinite;
+	z-index: -3;
+}
+
+@keyframes mix {
+	0% {}
+	50% {transform: none;}
+	65% {transform: translate(0, 200px);}
+	70% {transform: translate(50px, 200px);}
+	75% {transform: translate(-50px, 200px);}
+	80% {transform: translate(0px, 200px);}
+	100% {transform: none;}
+}
+
+.oven .bar-1 {
+	width: 450px;
+	height: 425px;
+	position: absolute;
+	left: 0;
+	top: 250px;
+	Z-index: -2;
+}
+
+.oven .bar-2 {
+	width: 400px;
+	height: 200px;
+	position: absolute;
+	left: 0;
+	top: 250px;
+	border-width: 100px 25px 125px 25px;
+	border-style: solid;
+	animation: cook 4.5s infinite;
+}
+
+.remover .bar-1 {
+	height: 200px;
+	width: 400px;
+	position: absolute;
+	left: 25px;
+	top: 0;
+}
+
+.remover .bar-2 {
+	height: 20px;
+	width: 350px;
+	position: absolute;
+	left: 50px;
+	top: 200px;
+}
+
+.remover .bar-3 {
+	height: 200px;
+	width: 100px;
+	position: absolute;
+	left: 175px;
+	top: 20px;
+	animation: remove_1 4.5s infinite;
+	z-index: -3;
+}
+
+@keyframes remove_1 {
+	0% {transform: none;}
+	50% {transform: none;}
+	70% {transform: translate(0,200px);}
+	100% {transform: none;}
+}
+
+.remover .bar-4 {
+	z-index: -1;
+	animation: remove_2 4.5s infinite;
+}
+
+@keyframes remove_2 {
+	0% {}
+	50% {transform: translate(450px,0);}
+	70% {transform: translate(450px,0);}
+	100% {transform: translate(450px,-380px);}
+}
+		</style>
+		<style>
+.bowl, .remover .bar-4 {
+	height: 200px;
+	width: 300px;
+	background-color: lightgray;
+	position: absolute;
+	top: 400px;
+	left: -375px;
+}
+
+.bowl.changed {
+	height: 250px;
+	background-color: transparent;
+	background-image: url(https://pngimg.com/uploads/chicken/chicken_PNG2149.png);
+	background-size: contain;
+	top: 380px;
+}
+
+.belt {
+	border-color: black;
+}
+
+.wheel {
+	border-color: gray;
+	background-color: black;
+}
+
+.wheel:after {
+	border-top-color: lightgray;
+	border-bottom-color: lightgray;
+}
+
+.entrance .bar-1 {
+	background-color: gray;
+}
+
+.exit .bar-1 {
+	background-color: gray;
+}
+
+.dropper .bar-1 {
+	background-color: gray;
+}
+
+.dropper .bar-2 {
+	background-color: lightgray;
+}
+
+.dropper.a .bar-3 {
+	height: 75px;
+	width: 60px;
+	left: 200px;
+	top: 170px;
+	background-color: green;
+	border-radius: 30px;
+}
+
+.dropper.b .bar-3 {
+	height: 75px;
+	width: 75px;
+	left: 190px;
+	top: 170px;
+	background-color: pink;
+	border-radius: 30px;
+}
+
+.dropper.c .bar-3 {
+	height: 30px;
+	width: 75px;
+	left: 190px;
+	top: 170px;
+	background-color: #ddd;
+	border-radius: 15px 50% 50% 15px;
+}
+
+.dropper.d .bar-3 {
+	height: 65px;
+	width: 65px;
+	left: 190px;
+	top: 170px;
+	border: 5px solid lightgray;
+	border-radius: 38px;
+}
+
+.dropper.d .bar-3:after {
+	content: "";
+	height: 30px;
+	width: 30px;
+	position: absolute;
+	top: 13px;
+	left: 13px;
+	background-color: yellow;
+	border-radius: 15px;
+}
+
+.mixer .bar-1 {
+	background-color: gray;
+}
+
+.mixer .bar-2 {
+	background-color: lightgray;
+}
+
+.mixer .bar-3 {
+	background-color: gray;
+}
+
+.mixer .bar-4 {
+	background-color: lightgray;
+	border-bottom-left-radius: 25px;
+	border-bottom-right-radius: 25px;
+}
+
+.oven .bar-1 {
+	background-color: gray;
+}
+
+.oven .bar-2 {
+	border-color: gray;
+	background-color: #0000007f;
+}
+
+@keyframes cook {
+	0% {}
+	50% {background-color: #0000007f;}
+	60% {background-color: #7f00007f;}
+	90% {background-color: #7f00007f;}
+	100% {background-color: #0000007f;}
+}
+
+.remover .bar-1 {
+	background-color: gray;
+}
+
+.remover .bar-2 {
+	background-color: lightgray;
+}
+
+.remover .bar-3 {
+	background-color: gray;
+}
+		</style>
+		<script>
+var x;
+var y;
+var inner = "<div class=\"machine-inner\"></div>"
+var belt = "<div class=\"belt\"><div class=\"wheel\"></div><div class=\"wheel\"></div><div class=\"wheel\"></div><div class=\"wheel\"></div><div class=\"wheel\"></div></div>";
+var bowl = "<div class=\"bowl\"></div>"
+var bowl_2 = "<div class=\"bowl changed\"></div>"
+var bars = {"space":0,"entrance":1,"exit":1,"dropper":3,"mixer":4,"oven":2,"remover":4};
+var blocks;
+var changed = false;
+
+function bar(num) {
+	var c;
+	var output = "";
+	for(c=0;c<num;c++) {
+		output += "<div class=\"bar-"+(c+1).toString()+"\"></div>"
+	}
+	return(output)
+}
+
+
+setTimeout(function(){
+	blocks = document.getElementById("container").children;
+	
+	for(x of blocks){
+		x.classList.add("machine");
+		
+		x.innerHTML = inner;
+		
+		y = x.children[0];
+		
+		y.innerHTML += bar(bars[x.classList[0]]);
+		
+		if(x.classList[0] != "blank"){y.innerHTML +=belt;}
+		
+		if(x.classList[0] == "remover"){changed = true;}
+		
+		if(changed){y.innerHTML += bowl_2;} else{y.innerHTML += bowl;}
+	}
+	
+	document.getElementById("container").style.width = (blocks.length*450-450).toString()+"px";
+	
+	
+}, 0)
+		</script>
+	</head>
+	<body>
+		<div class="container" id="container">
+			<div class="entrance"></div>
+			<div class="space"></div>
+			<div class="dropper a"></div>
+			<div class="dropper b"></div>
+			<div class="dropper c"></div>
+			<div class="space"></div>
+			<div class="mixer"></div>
+			<div class="dropper d"></div>
+			<div class="space"></div>
+			<div class="oven"></div>
+			<div class="remover"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="exit"></div>
+			<div class="blank"></div>
+		</div>
+	</body>
+</html>

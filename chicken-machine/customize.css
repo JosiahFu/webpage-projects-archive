@@ -1,0 +1,193 @@
+.bowl, .remover .bar-4 {
+	height: 200px;
+	width: 300px;
+	background-color: lightgray;
+	position: absolute;
+	top: 400px;
+	left: -375px;
+}
+
+.bowl.changed {
+	height: 250px;
+	background-color: transparent;
+	background-image: url(chicken.png);
+	background-size: contain;
+	top: 380px;
+}
+
+.belt {
+	border-color: black;
+}
+
+.wheel {
+	border-color: gray;
+	background-color: black;
+}
+
+.wheel:after {
+	border-top-color: lightgray;
+	border-bottom-color: lightgray;
+}
+
+.entrance .bar-1 {
+	background-color: gray;
+}
+
+.exit .bar-1 {
+	background-color: gray;
+}
+
+.dropper .bar-1 {
+	background-color: gray;
+}
+
+.dropper .bar-2 {
+	background-color: lightgray;
+}
+
+.dropper.a .bar-3 {
+	height: 75px;
+	width: 60px;
+	left: 200px;
+	top: 170px;
+	background-color: green;
+	border-radius: 30px;
+}
+
+.dropper.b .bar-3 {
+	height: 75px;
+	width: 75px;
+	left: 190px;
+	top: 170px;
+	background-color: pink;
+	border-radius: 30px;
+}
+
+.dropper.c .bar-3 {
+	height: 30px;
+	width: 75px;
+	left: 190px;
+	top: 170px;
+	background-color: #ddd;
+	border-radius: 15px 50% 50% 15px;
+}
+
+.dropper.d .bar-3 {
+	height: 65px;
+	width: 65px;
+	left: 190px;
+	top: 170px;
+	border: 5px solid lightgray;
+	border-radius: 38px;
+}
+
+.dropper.d .bar-3:after {
+	content: "";
+	height: 30px;
+	width: 30px;
+	position: absolute;
+	top: 13px;
+	left: 13px;
+	background-color: yellow;
+	border-radius: 15px;
+}
+
+.mixer .bar-1 {
+	background-color: gray;
+}
+
+.mixer .bar-2 {
+	background-color: lightgray;
+}
+
+.mixer .bar-3 {
+	background-color: gray;
+}
+
+.mixer .bar-4 {
+	background-color: lightgray;
+	border-bottom-left-radius: 25px;
+	border-bottom-right-radius: 25px;
+}
+
+.oven .bar-1 {
+	background-color: gray;
+}
+
+.oven .bar-2 {
+	border-color: gray;
+	background-color: #0000007f;
+}
+
+@keyframes cook {
+	0% {}
+	50% {background-color: #0000007f;}
+	60% {background-color: #7f00007f;}
+	80% {background-color: #7f00007f;}
+	100% {background-color: #0000007f;}
+}
+
+.remover .bar-1 {
+	background-color: gray;
+}
+
+.remover .bar-2 {
+	background-color: lightgray;
+}
+
+.remover .bar-3 {
+	background-color: gray;
+}
+
+.scanner .bar-1 {
+	background-color: #333;
+}
+
+.scanner .bar-2 {
+	border-color: gray;
+	background-color: #0000007f;
+}
+
+.scanner .bar-3 {
+	background-color: #00ff004f;
+	border-bottom-color: lime;
+}
+
+.xray .bar-1 {
+	border-color: gray;
+	background-color: black;
+	background-image: url(xrays/chicken.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	transform: rotateY(180deg);
+}
+
+.xray .bar-2 {
+	border-top-color: white;
+	background-color: black;
+}
+
+.xray .bar-3 {
+	background-color: green;
+}
+
+@keyframes xray_2_green {
+	0% {background-color: green; box-shadow: none;}
+	80% {background-color: green; box-shadow: none;}
+	85% {background-color: lime; box-shadow: 0px 0px 20px 20px  #00ff007f;}
+	94% {background-color: lime; box-shadow: 0px 0px 20px 20px  #00ff007f;}
+	100% {background-color: green; box-shadow: none;}
+}
+
+.xray .bar-4 {
+	background-color: maroon;
+}
+
+@keyframes xray_2_red {
+	0% {background-color: maroon; box-shadow: none;}
+	80% {background-color: maroon; box-shadow: none;}
+	85% {background-color: red; box-shadow: 0px 0px 20px 20px #ff00007f;}
+	95% {background-color: red; box-shadow: 0px 0px 20px 20px  #ff00007f;}
+	100% {background-color: maroon; box-shadow: none;}
+}

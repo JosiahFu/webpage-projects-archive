@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Clipboard Switcher</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="back"></div>
+	<div class="pages" id="pages">
+		<div class="page" onclick="switchTo(0);">
+			<h1>Eating Pufferfish</h1>
+			<h2>A Paper on Odd Delicacies</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget faucibus dolor. Aliquam fringilla sagittis odio in luctus. Phasellus vestibulum quam eget metus pellentesque consequat. Cras pellentesque imperdiet mauris, ac elementum est faucibus id. Vivamus vel neque quis urna viverra faucibus ac ac arcu. Nunc rutrum tristique mollis. Ut finibus varius ipsum, quis molestie diam accumsan vel. Vestibulum lacinia, lectus et sagittis iaculis, diam tellus mollis neque, sit amet dictum neque libero id lacus. Nulla facilisi. Morbi in turpis egestas, aliquet urna non, volutpat eros.</p>
+		</div>
+		<div class="page" onclick="switchTo(1);">
+			<h3>Page 2</h3>
+			<p>Fusce ac ultricies erat. Proin suscipit consectetur sapien, ut aliquam enim suscipit non. Nulla eget condimentum nunc. Quisque est eros, sollicitudin ac interdum bibendum, maximus et ligula. Praesent quis felis ultricies, tincidunt lectus ac, sollicitudin magna. Aenean vehicula velit ac leo ornare vulputate. Curabitur eget sem non justo aliquet commodo vestibulum sed nibh. Aenean semper dolor id ligula interdum, ac volutpat justo faucibus. Donec a laoreet dui. Vestibulum hendrerit quam et quam vulputate ullamcorper. Sed ultricies condimentum sodales.</p>
+		</div>
+		<div class="page" onclick="switchTo(2);">
+			<h3>Page 3</h3>
+			<p>Proin eu tincidunt dui. Nunc at sagittis nulla. Mauris purus magna, eleifend id congue et, posuere nec eros. Quisque commodo massa felis, at pulvinar erat rhoncus id. Nunc tincidunt, nisl sit amet consequat lacinia, urna justo tempor tellus, vitae tempor ligula nunc vitae leo. Sed congue quis sapien ut convallis. Phasellus pellentesque scelerisque elit vitae auctor. Vestibulum finibus tellus in odio euismod aliquam. Cras ut mi congue, dignissim leo et, lobortis turpis. Etiam vel odio ipsum. Ut sed lobortis lorem. Nulla ut viverra lectus.</p>
+		</div>
+		<div class="page" onclick="switchTo(3);">
+			<h2>Credits</h2>
+			<p>xxxxxxxxxxxxxxxxxxx</p>
+			<p>yyyyyyyyyyyyyyyyyyy</p>
+			<p>zzzzzzzzzzzzzzzzzzz</p>
+		</div>
+	</div>
+	<div class="clip"></div>
+	<div class="lastbutton" onclick="lastPage();"></div>
+	<div class="nextbutton" onclick="nextPage();"></div>
+	<script src="script.js"></script>
+  </body>
+</html>
